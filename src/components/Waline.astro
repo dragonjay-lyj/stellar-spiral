@@ -1,0 +1,25 @@
+<div id="waline" class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none"></div>
+
+<script>
+import { init } from '@waline/client';
+
+import '@waline/client/dist/waline.css';
+
+init({
+  el: '#waline',
+  serverURL: 'https://com.dragonjay.top',
+  emoji: [
+      'https://cdn.jsdelivr.net/npm/sticker-heo@2022.7.5/Sticker-100/',
+      'https://unpkg.com/@waline/emojis@1.2.0/alus',
+      'https://unpkg.com/@waline/emojis@1.2.0/bilibili',
+      'https://unpkg.com/@waline/emojis@1.2.0/bmoji',
+      'https://unpkg.com/@waline/emojis@1.2.0/qq',
+      'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+      'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji',
+      'https://unpkg.com/@waline/emojis@1.2.0/weibo',
+      'https://unpkg.com/@waline/emojis@1.2.0/soul-emoji',
+    ],
+  reaction: true,
+});
+
+</script>

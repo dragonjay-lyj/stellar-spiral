@@ -1,0 +1,20 @@
+---
+const { cardData } = Astro.props;
+---
+<a href={cardData.link} class="relative flex items-center gap-4 rounded-lg p-5 shadow-lg transform transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105" style={`background-image: url(${cardData.background}); background-size: cover; animate-pulse ${Astro.props.show ? '' : 'hidden'}`}>
+  <div class="h-20 w-20 overflow-hidden rounded-lg bg-center bg-no-repeat">
+    <img data-src={cardData.avatar} class="lazy h-auto max-w-full object-cover" loading="lazy" />
+  </div>
+  <div class="p-1">
+    <span class="inline-block bg-gray-700 rounded px-2 py-1 text-sm font-bold text-white">{cardData.tag}</span>
+    <div class="py-1 text-2xl font-light text-white">{cardData.name}</div>
+  </div>
+</a>
+
+<script>
+  import LazyLoad from 'vanilla-lazyload';
+
+  if (typeof window !== 'undefined') {
+    const lazyLoadInstance = new LazyLoad();
+  }
+</script>

@@ -1,0 +1,105 @@
+---
+const { scardData } = Astro.props;
+---
+
+<div id="card" class="card relative mx-2 mb-8 mt-2 flex max-w-[350px] flex-col gap-[0.75rem_1rem] rounded-lg p-4 text-base leading-normal">
+  <div class="block flex-[initial] flex-col" style="border-radius: max(( 8px - 0px ) - 1rem , min( 1rem / 2, ( 8px - 0px ) / 2));">
+    <div class="relative h-0 flex-1 overflow-hidden rounded-[inherit] text-base leading-normal transition-[inherit]" style="padding-bottom: calc(clamp( 0px , calc(100% / (16/9)), 9999px ) - 2 * 0px);">
+      <a data-fancybox="gallery" href={scardData.src}><img crossorigin="anonymous" id="card-img" class="lazy card-img absolute m-0 box-border flex h-full w-full items-center justify-center object-cover p-0" data-src={scardData.img} alt="" /></a
+      >
+    </div>
+  </div>
+  <div class="z-[1] flex flex-[9999] flex-col gap-x-4" style="row-gap: max(2px, calc(0.1875 * 1rem));">
+    <div class="box-border block px-4">
+      <div class="gap-2.5; box-border flex flex-col items-stretch justify-start">
+        <div class="box-border flex flex-col items-stretch justify-start gap-0">
+          <div class="box-border flex flex-row flex-wrap items-center justify-start gap-1">
+            <div class="box-border grow-0 text-sm font-medium leading-[1.55] text-inherit no-underline">AI 提示词</div>
+            <div id="copy-button" class="box-border inline-flex h-4 w-auto grow-0 cursor-[inherit] items-center justify-center overflow-hidden text-ellipsis rounded border border-solid border-transparent px-[6.66667px] py-0 text-[9px] font-bold uppercase leading-[14px] tracking-[0.25px] text-black no-underline"><span class="box-border overflow-hidden text-ellipsis whitespace-nowrap">文生图</span></div>
+          </div>
+          <pre id="copy-content" class="m-0 box-border block max-h-[150px] overflow-auto whitespace-normal rounded bg-[rgb(44,46,51)] p-2.5 text-xs leading-[1.55] text-[rgb(193,194,197)]" dir="ltr">{scardData.text}</pre>
+          <button id="copy-button" class="copy-button relative box-border inline-block h-[30px] w-auto cursor-pointer select-none appearance-none overflow-visible rounded border border-solid border-transparent px-3.5 py-0 text-left text-xs font-semibold normal-case leading-none text-black no-underline" type="button">
+            <div class="box-border flex h-full items-center justify-center overflow-visible">
+              <span class="box-border flex h-full items-center overflow-hidden whitespace-nowrap"
+                ><div class="box-border flex flex-wrap items-center justify-start gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="box-border h-[16] w-[16] grow-0 overflow-hidden fill-none stroke-[currentcolor] stroke-2">
+                    <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
+                    <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path></svg
+                  >复制
+                </div></span
+              >
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  import('clipboard').then(({ default: ClipboardJS }) => {
+    new ClipboardJS('#copy-button', {
+      text: () => document.querySelector('#copy-content').textContent
+    });
+  });
+});
+</script>
+
+<script>
+  import LazyLoad from 'vanilla-lazyload';
+
+  if (typeof window !== 'undefined') {
+    const lazyLoadInstance = new LazyLoad();
+  }
+</script>
+
+<script>
+import ColorThief from 'colorthief';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const colorThief = new ColorThief();
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach((card: HTMLElement) => {
+    const img = card.querySelector('.card-img') as HTMLImageElement;
+    const btn = card.querySelector('.copy-button') as HTMLElement;
+
+    const loadImage = new Promise((resolve) => {
+      img.addEventListener('load', resolve);
+    });
+
+    loadImage.then(() => {
+      const dominantColor = colorThief.getColor(img);
+      const color = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+      card.style.backgroundColor = color;
+      btn.style.backgroundColor = color;
+    });
+  });
+});
+</script>
+
+<script>
+  import { Fancybox } from '@fancyapps/ui';
+  import '@fancyapps/ui/dist/fancybox/fancybox.css';
+  Fancybox.bind('[data-fancybox="gallery"]', {
+  //
+});
+</script>
+
+<script src="https://unpkg.com/nsfwjs/dist/nsfwjs.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const img = document.getElementById('card-img');
+    const modelUrl = 'https://cdn.jsdelivr.net/gh/dragonjay-lyj/nsfw@main/model.json'; // Replace with your custom model URL
+    const model = await nsfwjs.load(modelUrl, {size: 299});  // Load the model with the custom URL
+
+    img.onload = async function() {
+      const predictions = await model.classify(img);
+      const isNsfw = predictions.some(p => (p.className === 'Hentai' || p.className === 'Porn') && p.probability > 0.5);
+
+      if (isNsfw) {
+        img.style.filter = 'blur(20px)';
+      }
+    }
+  });
+</script>

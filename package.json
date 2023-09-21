@@ -1,0 +1,48 @@
+{
+	"name": "-stellar-spiral",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astro-community/astro-embed-twitter": "^0.5.1",
+		"@astro-community/astro-embed-youtube": "^0.4.1",
+		"@astrojs/markdoc": "^0.5.0",
+		"@astrojs/mdx": "^1.1.0",
+		"@astrojs/partytown": "^2.0.0",
+		"@astrojs/prefetch": "^0.4.0",
+		"@astrojs/prism": "^3.0.0",
+		"@astrojs/sitemap": "^3.0.0",
+		"@astrojs/tailwind": "^5.0.0",
+		"@astrojs/vue": "^3.0.0",
+		"@fancyapps/ui": "^5.0.22",
+		"@tensorflow/tfjs": "^3.18.0",
+		"astro": "^3.1.0",
+		"astro-auto-import": "^0.3.1",
+		"astro-compressor": "^0.4.0",
+		"astro-critters": "^2.0.11",
+		"astro-i18next": "^1.0.0-beta.21",
+		"astro-navbar": "^2.1.0",
+		"astro-robots-txt": "^1.0.0",
+		"astro-seo": "^0.8.0",
+		"clipboard": "^2.0.11",
+		"colorthief": "^2.4.0",
+		"flowbite": "^1.8.1",
+		"node-fetch": "^3.3.2",
+		"nsfwjs": "^2.4.2",
+		"tailwindcss": "^3.3.3",
+		"vanilla-lazyload": "^17.8.4",
+		"vue": "^3.3.4",
+		"vuetify": "^3.3.15"
+	},
+	"devDependencies": {
+		"@types/node-fetch": "^2.6.5",
+		"@waline/client": "^2.15.8",
+		"accessible-astro-components": "^2.2.0"
+	}
+}

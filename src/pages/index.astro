@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../style/all.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+			<Navigation></Navigation>
+		  </div>
+		  <section class="bg-white py-8 dark:bg-gray-900 lg:py-16">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:text-center">
+			  <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">游戏打蛋机</h1>
+			  <p class="mx-auto mt-3 max-w-md text-lg text-gray-500 dark:text-gray-400 sm:text-xl md:mt-5 md:max-w-3xl">一个白嫖党聚集的地方</p>
+			  <div class="mb-8 flex flex-col md:flex-row lg:justify-center">
+				<a href="/pic" class="mb-3 inline-flex items-center justify-center rounded-lg bg-blue-700 px-6 py-2.5 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:focus:ring-blue-800 md:mb-0 md:mr-5">那就来罢</a
+				><a href="/all" class="bg-white-100 inline-flex items-center justify-center rounded-lg border border-gray-200 px-6 py-2.5 text-center text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+				  ><svg class="mr-1 h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18"><path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"></path></svg><span class="ml-2">康康你的</span></a
+				>
+			  </div>
+			  <div class="mt-10">
+				<video controls autoplay loop preload="auto" title="你被骗了" class="mx-auto w-full max-w-4xl rounded-lg shadow-lg">
+				  <source src="https://file.dragonjay.top/api/raw/?path=/video/nibeipianla.mp4" type="video/mp4" />
+				</video>
+			  </div>
+			</div>
+		  </section>		  
+		  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<div class="rounded-lg bg-white p-6 shadow dark:bg-gray-800">
+			  <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">加入QQ群</h2>
+			  <p class="mt-4 text-gray-600 dark:text-gray-400">虽然还没有QQ群，但是可以添加QQ410714630来骗，来偷袭！</p>
+			</div>
+			<div class="rounded-lg bg-white p-6 shadow dark:bg-gray-800">
+			  <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">加入 Telegram 讨论组</h2>
+			  <p class="mt-4 text-gray-600 dark:text-gray-400">虽然还没有 Telegram 讨论组，但是可以...</p>
+			  <a class="box-border inline-block h-[42px] animate-[bg-move_linear_5s_infinite] cursor-pointer overflow-hidden rounded-[22px] bg-[#2481cc] bg-no-repeat px-6 py-[13px] align-top font-[bold] text-sm uppercase leading-[17px] text-white no-underline" href="tg://resolve?domain=Ne1lBowman">发消息</a>
+			</div>
+			<div class="rounded-lg bg-white p-6 shadow dark:bg-gray-800">
+			  <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">爱发电</h2>
+			  <p class="mt-4 text-gray-600 dark:text-gray-400">
+				通过爱发电支持我。<br />
+				帮我分担不需要服务器的费用，或者不请我喝咖啡。
+			  </p>
+			  <a href="https://afdian.net/a/dragonjay" class="cursor-pointer text-[rgba(0,0,0,0.8)] no-underline"
+				><div class="relative box-border inline-flex cursor-pointer items-center justify-center self-center whitespace-nowrap rounded-sm bg-[linear-gradient(90deg,#946ce6,#7e5fd9)] px-[50px] py-[13px] text-base leading-none text-white"><!----><span class="mr-2">￥</span>为TA发电</div></a
+			  >
+			</div>
+		  </div>		  
+		<Footer></Footer>	  
+	</main>
+</Layout>
+
