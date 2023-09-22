@@ -1,0 +1,25 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../style/all.css';
+import Navigation from '../../../components/Navigation.astro';
+import Skeleton from '../../../components/Skeleton.astro';
+import ShowCard from '../../../components/ShowCard.astro';
+import data from '../../../json/pic/afterclass/index.json';
+import Waline from '../../../components/Waline.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		  <Navigation></Navigation>
+		<div id="response" class="relative z-20 mx-auto grid gap-4 pt-10 sm:grid-cols-3 max-w-3xl sm:grid-rows-3 xl:max-w-none">
+			{data
+				? data.map((scardData, index) => (
+					<ShowCard key={index} scardData={scardData} />
+				  ))
+				: <Skeleton show={data ? false : true} />}
+		</div>
+	  <Waline></Waline>
+      <Footer></Footer>
+	  </main>	  
+</Layout>

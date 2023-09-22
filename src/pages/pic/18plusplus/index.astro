@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../style/all.css';
+import Navigation from '../../../components/Navigation.astro';
+import Skeleton from '../../../components/Skeleton.astro';
+import DetailCard from '../../../components/DetailCard.astro';
+import data from '../../../json/pic/18plusplus/index.json';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		  <Navigation></Navigation>
+		</div>
+		<div id="response" class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
+			<div class="grid gap-2">
+			{data
+				? data.map((dcardData, index) => (
+					<DetailCard key={index} dcardData={dcardData} />
+				  ))
+				: <Skeleton show={data ? false : true} />}
+			</div>
+		</div>
+		<Footer></Footer>
+	  </main>	  
+</Layout>
