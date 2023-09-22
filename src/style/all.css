@@ -22,3 +22,15 @@
 .wl-editor {
   width: calc(98% - 1em);
 }
+
+@font-face {
+  font-family: 'handwrite43';
+  src: url('../font/handwrite43.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'handwrite43', sans-serif;
+}
