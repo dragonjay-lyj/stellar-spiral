@@ -9,6 +9,7 @@ import astroI18next from "astro-i18next";
 import robotsTxt from "astro-robots-txt";
 import critters from "astro-critters";
 import compressor from "astro-compressor";
+import embeds from 'astro-embed/integration';
 
 import vue from "@astrojs/vue";
 
