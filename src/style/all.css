@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.hidden {
-  display: none;
-}
-
 .twitter-tweet {
   background: floralwhite;
   font-family: sans-serif;
@@ -16,4 +12,13 @@
 .twitter-tweet a {
   color: purple;
   font-weight: bold;
+}
+
+.wl-editor,
+.wl-input {
+  max-width: 98%;
+}
+
+.wl-editor {
+  width: calc(98% - 1em);
 }

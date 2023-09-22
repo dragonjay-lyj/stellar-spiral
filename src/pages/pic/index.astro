@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation.astro';
 import Skeleton from '../../components/Skeleton.astro';
 import PicCard from '../../components/PicCard.astro';
 import data from '../../json/pic/index.json';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,5 +20,6 @@ import data from '../../json/pic/index.json';
 				: <Skeleton show={data ? false : true} />}
 			</div>
 		</div>
+		<Footer></Footer>
 	  </main>	  
 </Layout>
