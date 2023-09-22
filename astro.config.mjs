@@ -15,7 +15,7 @@ import vue from "@astrojs/vue";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wiki.dragonjay.top',
-  integrations: [tailwind(), markdoc(), mdx(), partytown(), prefetch(), sitemap(), robotsTxt(), astroI18next(), critters(), compressor({
+  integrations: [tailwind(), markdoc(), embeds(), mdx(), partytown(), prefetch(), sitemap(), robotsTxt(), astroI18next(), critters(), compressor({
     gzip: true,
     brotli: true
   }), vue()]

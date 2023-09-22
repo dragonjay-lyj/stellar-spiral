@@ -6,6 +6,7 @@ import Skeleton from '../../../components/Skeleton.astro';
 import DetailCard from '../../../components/DetailCard.astro';
 import data from '../../../json/pic/g-ondom/index.json';
 import Footer from '../../../components/Footer.astro';
+import { Tweet } from '@astro-community/astro-embed-twitter';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,6 +15,7 @@ import Footer from '../../../components/Footer.astro';
 		</div>
 		<div id="response" class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
 			<div class="grid gap-2">
+				<Tweet id="https://twitter.com/cpk28_/status/1688861975840006144" />
 			{data
 				? data.map((dcardData, index) => (
 					<DetailCard key={index} dcardData={dcardData} />
