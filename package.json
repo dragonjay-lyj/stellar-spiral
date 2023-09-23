@@ -17,6 +17,7 @@
 		"@astrojs/prism": "^3.0.0",
 		"@astrojs/sitemap": "^3.0.0",
 		"@astrojs/tailwind": "^5.0.0",
+		"@astrojs/vercel": "^5.0.1",
 		"@astrojs/vue": "^3.0.0",
 		"@fancyapps/ui": "^5.0.22",
 		"@tensorflow/tfjs": "^3.18.0",
