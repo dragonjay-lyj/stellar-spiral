@@ -10,11 +10,17 @@ import robotsTxt from "astro-robots-txt";
 import critters from "astro-critters";
 import compressor from "astro-compressor";
 import embeds from 'astro-embed/integration';
-
+import vercel from '@astrojs/vercel/serverless';
 import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   site: 'https://wiki.dragonjay.top',
   integrations: [tailwind(), markdoc(), embeds(), mdx(), partytown(), prefetch(), sitemap(), robotsTxt(), astroI18next(), critters(), compressor({
     gzip: true,

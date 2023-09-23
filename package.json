@@ -20,6 +20,7 @@
 		"@astrojs/vue": "^3.0.0",
 		"@fancyapps/ui": "^5.0.22",
 		"@tensorflow/tfjs": "^3.18.0",
+		"@vercel/analytics": "^1.0.2",
 		"astro": "^3.1.0",
 		"astro-auto-import": "^0.3.1",
 		"astro-compressor": "^0.4.0",
