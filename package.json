@@ -23,6 +23,7 @@
 		"@material/web": "^1.0.0-pre.17",
 		"@tensorflow/tfjs": "^3.18.0",
 		"@vercel/analytics": "^1.0.2",
+		"algoliasearch": "^4.20.0",
 		"astro": "^3.1.0",
 		"astro-auto-import": "^0.3.1",
 		"astro-compressor": "^0.4.0",
