@@ -5,8 +5,8 @@ const { adata } = Astro.props;
   <img class="author-avatar h-16 w-16 rounded-full" src={adata.avatar} />
   <div class="author-details">
     <div class="author-name text-xl">{adata.name}</div>
-    <div class="author-socials mt-2 flex space-x-2">
-      {adata.socials.map(social => <a class="social-link" href={social.url}><img class="h-6 w-6" src={social.icon} /></a>)}
+    <div class="author-socials relative mt-2 flex h-[20px] w-[20px] select-none space-x-2 self-center text-gray-500 dark:text-white lg:h-[24px] lg:w-[24px]">
+      {adata.socials.map(social => <a class="social-link" href={social.url}><i class={social.icon} /></i></a>)}
     </div>
   </div>
 </div>

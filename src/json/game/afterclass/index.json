@@ -25,23 +25,30 @@
     ],
     "links": [
       {
-        "name": "Link1",
-        "url": "https://link1.com"
+        "name": "Patreon",
+        "icon": "fa-brands fa-patreon",
+        "url": "https://www.patreon.com/andehP/"
       },
       {
-        "name": "Link2",
-        "url": "https://link2.com"
+        "name": "Itch.io",
+        "icon": "fa-brands fa-itch-io",
+        "url": "https://andehp.itch.io/afterclass"
+      },
+      {
+        "name": "",
+        "icon": "fa-brands fa-x-twitter",
+        "url": "https://twitter.com/afcl_tbd/"
       }
     ]
   },
   "gdimages": ["https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTYucG5n/original/V20xUf.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTUucG5n/original/ijEn62.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDEucG5n/original/uOl6G5.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDIucG5n/original/Lug9%2Fh.png"],
   "adata": {
-    "avatar": "",
-    "name": "",
+    "avatar": "https://i.postimg.cc/26dbHxkC/image.png",
+    "name": "andehPi",
     "socials": [
         {
           "url": "http://twitter.com/johndoe",
-          "icon": "twitter.png"
+          "icon": "fa-brands fa-x-twitter w-full h-full block align-middle"
         }
       ]
   },
