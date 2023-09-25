@@ -1,0 +1,45 @@
+---
+const { gdimages } = Astro.props;
+---
+<div class="relative m-0 box-border block rounded-[2rem] bg-[#fffbff] p-0 align-middle text-[#1c1b1e] shadow-[0_0.125rem_0.125rem_0_rgb(0_0_0_/_0.32)] transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s] dark:bg-gray-900">
+  <div class="game-carousel mx-auto grid max-w-xl grid-cols-3 gap-4 p-10">
+    {gdimages.map(images => <a data-fancybox="gallery" href={images}><img class="rounded" src={images} /></a>)}
+  </div>
+</div>
+<script>
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/fancybox.esm.js';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+Fancybox.bind('[data-fancybox="gallery"]', {
+  dragToClose: false,
+
+  Toolbar: {
+    display: {
+      left: ['close'],
+      middle: [],
+      right: [],
+    },
+  },
+
+  Images: {
+    zoom: false,
+  },
+
+  Thumbs: {
+    type: 'classic',
+  },
+
+  Carousel: {
+    transition: false,
+    friction: 0,
+  },
+
+  on: {
+    'Carousel.ready Carousel.change': (fancybox) => {
+      fancybox.container.style.setProperty(
+        '--bg-image',
+        `url("${fancybox.getSlide().thumbSrc}")`
+      );
+    },
+  },
+});
+</script>

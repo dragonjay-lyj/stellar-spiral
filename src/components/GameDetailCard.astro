@@ -1,0 +1,13 @@
+---
+const { gddata } = Astro.props;
+---
+<div class="relative m-0 box-border block rounded-[2rem] bg-[#fffbff] p-0 align-middle text-[#1c1b1e] shadow-[0_0.125rem_0.125rem_0_rgb(0_0_0_/_0.32)] transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s] dark:bg-gray-900">
+  <img class="game-card-cover relative mx-auto my-0 box-border h-32 w-full rounded-[2rem_2rem_0_0] object-cover object-center p-0 align-middle text-inherit transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s]" src={gddata.coverImage} />
+  <div class="game-card-systems relative mt-2 flex h-[20px] w-[20px] select-none space-x-2 self-center text-gray-500 dark:text-white lg:h-[24px] lg:w-[24px]">{gddata.systems.map(system => <i class={system.icon} ></i>)}</div>
+  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">支持语言：</div>
+  <div class="game-card-languages mt-2 flex space-x-2">{gddata.languages.map(language => <span class="tag rounded-full bg-gray-200 px-2 py-1 text-sm">{language}</span>)}</div>
+  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">标签：</div>
+  <div class="game-card-tags mt-2 flex flex-wrap gap-2">{gddata.tags.map(tag => <span class="relative m-0 box-content inline-flex h-8 min-w-[2rem] flex-none cursor-pointer select-none items-center justify-center gap-4 whitespace-normal rounded-[1.25rem] border border-solid border-[#7a757f] border-transparent bg-[#e8def8] px-4 py-0 align-bottom text-sm font-medium normal-case leading-[normal] text-[#49454e] no-underline transition-[transform,0.3s] duration-[border-radius,0.3s] ease-[padding]">{tag}</span>)}</div>
+  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">相关链接：</div>
+  <div class="game-card-links mt-2 flex space-x-2">{gddata.links.map(link => <a class="relative m-0 box-content inline-flex h-10 min-w-[2.5rem] flex-none cursor-pointer select-none items-center justify-center gap-4 whitespace-normal rounded-[1.25rem] border-[none] bg-[#e8def8] px-6 py-0 align-middle text-sm font-medium leading-[normal] text-[#1e192b] no-underline transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s]" href="{link.url}">{link.name}</a>)}</div>
+</div>

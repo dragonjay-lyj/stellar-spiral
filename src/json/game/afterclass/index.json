@@ -1,0 +1,50 @@
+{
+  "gddata": {
+    "coverImage": "https://cdn.jsdelivr.net/gh/dragonjay-lyj/wiki-pic@main/00010.webp",
+    "systems": [
+      {
+        "icon": "fa-brands fa-windows w-full h-full block align-middle"
+      },
+      {
+        "icon": "fa-brands fa-android w-full h-full block align-middle"
+      },
+      {
+        "icon": "fa-brands fa-apple w-full h-full block align-middle"
+      },
+      {
+        "icon": "fa-brands fa-linux w-full h-full block align-middle"
+      }
+    ],
+    "languages": [
+      "🇺🇸 English"
+    ],
+    "tags": [
+      "tag1",
+      "tag2",
+      "tag3"
+    ],
+    "links": [
+      {
+        "name": "Link1",
+        "url": "https://link1.com"
+      },
+      {
+        "name": "Link2",
+        "url": "https://link2.com"
+      }
+    ]
+  },
+  "gdimages": ["https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTYucG5n/original/V20xUf.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTUucG5n/original/ijEn62.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDEucG5n/original/uOl6G5.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDIucG5n/original/Lug9%2Fh.png"],
+  "adata": {
+    "avatar": "",
+    "name": "",
+    "socials": [
+        {
+          "url": "http://twitter.com/johndoe",
+          "icon": "twitter.png"
+        }
+      ]
+  },
+  "description": "",
+  "coverImage": "https://cdn.jsdelivr.net/gh/dragonjay-lyj/wiki-pic@main/00010.webp"
+}

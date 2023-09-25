@@ -1,0 +1,28 @@
+---
+const { gcardData } = Astro.props;
+---
+<div class="m-0 box-border w-1/5 pl-[15px]">
+  <div class="relative mb-0 box-border block">
+    <div id="card" class="relative m-0 box-border block rounded-[2rem] bg-[#fffbff] p-0 align-middle text-[#1c1b1e] shadow-[0_0.125rem_0.125rem_0_rgb(0_0_0_/_0.32)] transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s]">
+      <div class="relative block h-[180px] overflow-hidden rounded-none">
+        <a href={gcardData.link} class="cursor-pointer text-base font-bold not-italic leading-[1.31] text-[#F46119] no-underline transition-all duration-[0.25s] ease-linear"><img src={gcardData.img} class="absolute left-2/4 top-2/4 box-border h-auto max-h-[325px] min-h-full w-full max-w-full -translate-x-2/4 -translate-y-2/4 object-cover object-[top_center] align-middle" /></a>
+      </div>
+      <div class="box-border p-1.5">
+        <a class="mb-2.5 box-border block cursor-pointer overflow-hidden pt-2.5 text-lg font-semibold not-italic leading-[1.31] text-[#1f1f1f] no-underline transition-all duration-[0.25s] ease-linear" href={gcardData.link}> {gcardData.name}</a>
+        <div class="mx-0 mb-0 mt-[-5px] box-border font-[normal] text-[13px] not-italic leading-normal text-[#222] opacity-70">{gcardData.tag}</div>
+        <div class="mb-2.5 box-border flex items-center justify-between pt-2.5">
+          <div class="mr-2.5 box-border text-base font-semibold not-italic leading-[1.31] text-[#ed9f3a]"><span>{gcardData.rat}</span><i class="relative top-0.5 ml-1.5 box-border inline-flex items-center leading-[1em] text-[#FF9900]"></i></div>
+          <div class="box-border text-base font-semibold not-italic leading-[1.31] text-[#F46119]"><span>{gcardData.price} </span></div>
+        </div>
+        <div class="mt-2 box-border flex justify-between">
+          <div class="box-border flex items-center text-2xl text-[#616161]"></div>
+          <div class="relative box-border block w-6/12 text-right">
+            <ul class="m-0 box-border flex list-none items-center justify-end p-0">
+              <li class="z-[4] -ml-2.5 box-border w-auto max-w-[25px]"><img src={gcardData.user} class="box-border h-auto w-full max-w-full rounded-[100px] border-2 border-solid border-white align-middle" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
