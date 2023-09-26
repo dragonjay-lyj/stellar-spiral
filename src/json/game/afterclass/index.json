@@ -43,15 +43,15 @@
   },
   "gdimages": ["https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTYucG5n/original/V20xUf.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3Lzk2MjA5NTUucG5n/original/ijEn62.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDEucG5n/original/uOl6G5.png", "https://img.itch.zone/aW1hZ2UvMjYzMzA3LzU4NzIxNDIucG5n/original/Lug9%2Fh.png"],
   "adata": {
-    "avatar": "https://i.postimg.cc/26dbHxkC/image.png",
-    "name": "andehPi",
     "socials": [
         {
+          "avatar": "https://i.postimg.cc/26dbHxkC/image.png",
+          "name": "andehPi",
           "url": "http://twitter.com/johndoe",
-          "icon": "fa-brands fa-x-twitter w-full h-full block align-middle"
+          "icon": "fa-brands fa-x-twitter"
         }
       ]
   },
-  "description": "",
+  "description": "课后活动 / After Class乃一部以男同性恋为主题，充满阳刚之气，非工作适宜阅读的兽人视觉小说。此作品以主角（尔 / 默认名：瓦尔特）与他所遇之人的交往为核心，细腻描绘他们之间的关系。小说涵盖诸多争议性话题，日常交谈，尤其是过时的模因等。尔的每项抉择皆有其后果，或可改变故事的结局。",
   "coverImage": "https://cdn.jsdelivr.net/gh/dragonjay-lyj/wiki-pic@main/00010.webp"
 }

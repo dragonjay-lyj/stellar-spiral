@@ -1,13 +1,37 @@
 ---
 const { gddata } = Astro.props;
 ---
-<div class="relative m-0 box-border block rounded-[2rem] bg-[#fffbff] p-0 align-middle text-[#1c1b1e] shadow-[0_0.125rem_0.125rem_0_rgb(0_0_0_/_0.32)] transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s] dark:bg-gray-900">
-  <img class="game-card-cover relative mx-auto my-0 box-border h-32 w-full rounded-[2rem_2rem_0_0] object-cover object-center p-0 align-middle text-inherit transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s]" src={gddata.coverImage} />
-  <div class="game-card-systems relative mt-2 flex h-[20px] w-[20px] select-none space-x-2 self-center text-gray-500 dark:text-white lg:h-[24px] lg:w-[24px]">{gddata.systems.map(system => <i class={system.icon} ></i>)}</div>
-  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">支持语言：</div>
-  <div class="game-card-languages mt-2 flex space-x-2">{gddata.languages.map(language => <span class="tag rounded-full bg-gray-200 px-2 py-1 text-sm">{language}</span>)}</div>
-  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">标签：</div>
-  <div class="game-card-tags mt-2 flex flex-wrap gap-2">{gddata.tags.map(tag => <span class="relative m-0 box-content inline-flex h-8 min-w-[2rem] flex-none cursor-pointer select-none items-center justify-center gap-4 whitespace-normal rounded-[1.25rem] border border-solid border-[#7a757f] border-transparent bg-[#e8def8] px-4 py-0 align-bottom text-sm font-medium normal-case leading-[normal] text-[#49454e] no-underline transition-[transform,0.3s] duration-[border-radius,0.3s] ease-[padding]">{tag}</span>)}</div>
-  <div class="text-sm font-bold leading-5 text-gray-800 dark:text-white">相关链接：</div>
-  <div class="game-card-links mt-2 flex space-x-2">{gddata.links.map(link => <a class="relative m-0 box-content inline-flex h-10 min-w-[2.5rem] flex-none cursor-pointer select-none items-center justify-center gap-4 whitespace-normal rounded-[1.25rem] border-[none] bg-[#e8def8] px-6 py-0 align-middle text-sm font-medium leading-[normal] text-[#1e192b] no-underline transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s]" href={link.url}><i class={link.icon}></i>{link.name}</a>)}</div>
+<div class="w-full md:w-[240px] md:min-w-[240px] lg:w-[340px] lg:min-w-[340px]">
+  <div class="relative top-3 md:sticky lg:top-8 lg:pb-8">
+    <div class="flex w-full flex-col gap-3">
+      <div class="relative aspect-[360/170] w-full overflow-hidden rounded-[5px] bg-gray-100"><img alt="Thumbnail" class="h-full w-full object-cover" sizes="340px" src={gddata.coverImage} aria-label="Thumbnail" /></div>
+      <div class="flex flex-row flex-wrap gap-3 gap-y-2">
+        {gddata.systems.map(system =>
+          <div class="relative inline-block h-[20px] w-[20px] select-none self-center text-gray-500 lg:h-[24px] lg:w-[24px]"><i class={`${system.icon}" w-full h-full block align-middle`}></i></div>)}
+        <div class="grid w-full auto-rows-min grid-cols-1 flex-col gap-3 gap-y-3 sm:grid-cols-2 md:flex">
+          <div class="flex min-h-full flex-col gap-1">
+            <div class="font-bold leading-5 text-gray-800 dark:text-white">支持语言：</div>
+            <div class="flex flex-row flex-wrap gap-y-2">
+              {gddata.languages.map(language => <span class="hover:opacity-80 focus:shadow-none active:opacity-[inherit]"><div class="relative mr-2 flex cursor-pointer select-none flex-row items-center gap-1 whitespace-nowrap rounded-[5px] bg-gray-100 px-2 text-xs leading-6 text-gray-500 hover:bg-gray-200 hover:text-gray-700 active:bg-gray-100 active:text-gray-500 dark:bg-gray-200 md:py-[2px] md:text-sm">{language}</div></span>)}
+            </div>
+          </div>
+          <div class="flex min-h-full flex-col gap-1">
+            <div class="font-bold leading-5 text-gray-800 dark:text-white">标签：</div>
+            <div class="flex flex-row flex-wrap gap-y-2">
+              {gddata.tags.map(tag => <span class="hover:opacity-80 focus:shadow-none active:opacity-[inherit]"><div class="relative mr-2 flex cursor-pointer select-none flex-row items-center gap-1 whitespace-nowrap rounded-[5px] bg-gray-100 px-2 text-xs leading-6 text-gray-500 hover:bg-gray-200 hover:text-gray-700 active:bg-gray-100 active:text-gray-500 dark:bg-gray-200 md:py-[2px] md:text-sm">{tag}</div></span>)}
+            </div>
+          </div>
+          <div class="flex min-h-full flex-col gap-1">
+            <div class="font-bold leading-5 text-gray-800 dark:text-white">相关链接：</div>
+            <div class="grid w-full grid-cols-2 gap-2 gap-y-1">
+              <div class="relative flex gap-2 text-sm leading-5 text-gray-600">
+                {gddata.links.map(link => <a class="line-clamp-1 self-center before:absolute before:left-0 before:top-0 before:h-full before:w-full before:cursor-pointer hover:opacity-80 active:opacity-[inherit]" rel="noopener noreferrer nofollow noindex ugc" target="_blank" href={link.url}><i class={`${link.icon} w-[1em] h-[1em] inline-block leading-[1em] shrink-0 text-current self-center align-middle`}></i>{link.name}</a>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

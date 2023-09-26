@@ -1,11 +1,30 @@
 ---
 const { gdimages } = Astro.props;
 ---
-<div class="relative m-0 box-border block rounded-[2rem] bg-[#fffbff] p-0 align-middle text-[#1c1b1e] shadow-[0_0.125rem_0.125rem_0_rgb(0_0_0_/_0.32)] transition-[0.3s] delay-[padding] duration-[transform,0.3s] ease-[border-radius,0.3s] dark:bg-gray-900">
-  <div class="game-carousel mx-auto grid max-w-xl grid-cols-3 gap-4 p-10">
-    {gdimages.map(images => <a data-fancybox="gallery" href={images}><img class="rounded" src={images} /></a>)}
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    {gdimages.map(images => (
+    <a data-fancybox="gallery" href={images} class="flex items-center justify-center rounded bg-gray-200 p-4 shadow-md transition-all duration-200 hover:bg-gray-300">
+      <img class="h-auto w-full rounded object-cover" src={images} />
+    </a>
+    ))}
   </div>
+  <div class="swiper-button-next rounded-l-full bg-gray-700 p-2 text-white transition-all duration-200 hover:bg-gray-800"></div>
+  <div class="swiper-button-prev rounded-r-full bg-gray-700 p-2 text-white transition-all duration-200 hover:bg-gray-800"></div>
 </div>
+<script>
+  import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+const swiper = new Swiper('.swiper', {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 <script>
 import { Fancybox } from '@fancyapps/ui/dist/fancybox/fancybox.esm.js';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';

@@ -17,20 +17,26 @@ import Waline from '../../../src/components/Waline.astro';
 		<div id="response" class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
 			<div class="grid gap-2">
 <div class="game-detail-container relative">
-  <div class="game-detail-background absolute w-full h-full bg-cover bg-center opacity-50" style={`background: url(${data.coverImage}) center top 140px / auto 500px no-repeat`}></div>
 
   <div class="game-detail-content flex md:flex-row flex-col-reverse">
     <div class="game-card-container flex-none w-1/4 md:block hidden">
       <GameDetailCard gddata={data.gddata} />
     </div>
 
-    <div class="game-main-content flex-grow">
-      <button type="button" class="relative box-border h-6 min-w-[1.5rem] cursor-pointer select-none appearance-none items-center justify-center overflow-visible whitespace-nowrap rounded-[5px] border border-solid border-slate-200 bg-transparent bg-none align-middle text-xs font-semibold normal-case leading-[1.14] text-[#1A202C] outline-none outline-offset-2 transition-[background-color,border-color,color,fill,stroke,opacity,box-shadow,transform] duration-200">
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" focusable="false" class="box-border inline-block h-[1em] w-[1em] shrink-0 border-0 border-solid fill-[currentcolor] stroke-[currentcolor] stroke-0 align-middle leading-[1em] text-[#718096] transition-all delay-[0.3s] duration-[cubic-bezier(0.175,0.885,0.320,1.275)]" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z"></path></svg> <span class="waline-pageview-count box-border inline-flex shrink-0 self-center border-0 border-solid dark:text-white" data-path="/game/afterclass" />
-      </button>           
-      <GameCarousel gdimages={data.gdimages} />
-      <div class="game-description text-lg px-4 py-2">{data.description}</div>
+    <div class="flex w-full flex-1 flex-col gap-10 lg:gap-14">
+      <div class="dark:text-white relative flex w-full items-center overflow-hidden rounded-[5px] bg-[#90cdf429] py-3">
+        <span class="h-6 w-5 text-[#90cdf4]"
+          ><svg viewBox="0 0 24 24" focusable="false" class="inline-block h-full w-full shrink-0 align-middle leading-[1em] text-current"><path fill="currentColor" d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z"></path></svg></span
+        >当前页面翻译自英语，由<img class="h-[24px]" src="https://chatglm.cn/img/home-logo.ed2a28d4.svg" />提供
+      </div>      
+      <div class="nightwind-prevent-block w-full">
+        <GameCarousel gdimages={data.gdimages} />
+      </div>
+      <div class="w-full rounded-[5px] border-l-[5px] border-gray-300 bg-gray-100 px-3 py-2 text-gray-500 dark:border-gray-200 sm:border-l-[8px] sm:px-4 sm:py-3"><p class="text-base leading-6">{data.description}</p></div>
       <AuthorInfo adata={data.adata} />
+      <div class="flex flex-col gap-4 w-full overflow-hidden" >
+
+      </div>
     </div>
   </div>
 </div>
