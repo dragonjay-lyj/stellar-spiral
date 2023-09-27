@@ -1,10 +1,10 @@
 ---
 const { dcardData } = Astro.props;
 ---
-<div class="relative flex w-80 max-w-full flex-col rounded-lg border border-solid border-[#CDD7E1] bg-[#FBFCFE] p-4 text-base leading-normal text-[#32383E] transition-all hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#ffffff]">
+<div class="card relative flex w-80 max-w-full flex-col rounded-lg border border-solid border-[#CDD7E1] bg-[#FBFCFE] p-4 text-base leading-normal text-[#32383E] transition-all hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[8px_8px_0_0_#000] dark:hover:shadow-[8px_8px_0_0_#ffffff]">
   <div class="relative flex flex-col self-stretch rounded-bl-none rounded-br-none p-0 px-4 py-0 text-[#32383E]" style="border-radius: calc( 8px - 1px ); margin-left: calc(-1 * 1rem ); margin-right: calc(-1 * 1rem ); margin-top: calc(-1 * 1rem );">
     <div class="block min-w-[200px] flex-[initial] flex-col" style="border-radius: calc( calc( 8px - 1px ) - 0px ) calc( calc( 8px - 1px ) - 0px ) 0 0; margin: 0px calc(-1 * 1rem );">
-      <div class="relative h-0 flex-1 overflow-hidden rounded-[inherit] bg-[#F0F4F8] text-base leading-normal text-[#32383E] transition-[inherit]" style="padding-bottom: calc(clamp( 0px , calc(100% / (16 / 9)), 9999px ) - 2 * 0px);"><img crossorigin="anonymous" class="lazy absolute m-0 box-border flex h-full w-full items-center justify-center object-cover p-0" id="card-img" data-src={dcardData.background} alt="" /></div>
+      <div class="relative h-0 flex-1 overflow-hidden rounded-[inherit] bg-[#F0F4F8] text-base leading-normal text-[#32383E] transition-[inherit]" style="padding-bottom: calc(clamp( 0px , calc(100% / (16 / 9)), 9999px ) - 2 * 0px);"><img crossorigin="anonymous" class="card-img lazy absolute m-0 box-border flex h-full w-full items-center justify-center object-cover p-0" data-src={dcardData.background} alt="" /></div>
     </div>
   </div>
   <div class="z-[1] flex flex-[9999] flex-col gap-x-4" style="row-gap: max(2px, calc(0.1875 * 1rem));">
@@ -19,7 +19,7 @@ const { dcardData } = Astro.props;
       >
     </p>
   </div>
-  <div class="relative flex flex-col self-stretch rounded-t-none px-4 py-0 text-[#32383E]" style="border-radius: calc( 8px - 1px ); margin-left: calc(-1 * 1rem ); margin-right: calc(-1 * 1rem ); margin-bottom: calc(-1 * 1rem );"><a href={dcardData.link}><button id="card-btn" class="relative z-[1] inline-flex min-h-[2.75rem] cursor-pointer items-center justify-center border-[none] text-base font-semibold leading-none text-white no-underline" style={` width: calc(100% + -2 * calc(-1 * 1rem )); border-radius: 0 0 calc( 8px - 1px ) calc( 8px - 1px ); margin: 0 calc(-1 * 1rem );`} type="button">查看</button></a></div>
+  <div class="relative flex flex-col self-stretch rounded-t-none px-4 py-0 text-[#32383E]" style="border-radius: calc( 8px - 1px ); margin-left: calc(-1 * 1rem ); margin-right: calc(-1 * 1rem ); margin-bottom: calc(-1 * 1rem );"><a href={dcardData.link}><button class="copy-button relative z-[1] inline-flex min-h-[2.75rem] cursor-pointer items-center justify-center border-[none] text-base font-semibold leading-none text-white no-underline" style={` width: calc(100% + -2 * calc(-1 * 1rem )); border-radius: 0 0 calc( 8px - 1px ) calc( 8px - 1px ); margin: 0 calc(-1 * 1rem );`} type="button">查看</button></a></div>
 </div>
 
 <script>
@@ -31,21 +31,25 @@ const { dcardData } = Astro.props;
 </script>
 
 <script>
-  import ColorThief from 'colorthief';
+import ColorThief from 'colorthief';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const img = document.getElementById('card-img');
-  const btn = document.getElementById('card-btn');
-
   const colorThief = new ColorThief();
-  const loadImage = new Promise((resolve) => {
-    img.addEventListener('load', resolve);
-  });
+  const cards = document.querySelectorAll('.card');
 
-  loadImage.then(() => {
-    const dominantColor = colorThief.getColor(img);
-    const color = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-    btn.style.backgroundColor = color;
+  cards.forEach((card: HTMLElement) => {
+    const img = card.querySelector('.card-img') as HTMLImageElement;
+    const btn = card.querySelector('.copy-button') as HTMLElement;
+
+    const loadImage = new Promise((resolve) => {
+      img.addEventListener('load', resolve);
+    });
+
+    loadImage.then(() => {
+      const dominantColor = colorThief.getColor(img);
+      const color = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+      card.style.backgroundColor = color;
+    });
   });
 });
 </script>

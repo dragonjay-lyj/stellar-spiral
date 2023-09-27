@@ -13,15 +13,13 @@ import { Tweet } from 'astro-embed';
 	<main>
 		  <Navigation></Navigation>
 		</div>
-		<div id="response" class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
-			<div class="grid gap-2">
+		<div id="response" class="relative z-20 mx-auto grid gap-3 pt-10 sm:grid-cols-3 max-w-3xl sm:grid-rows-2 xl:max-w-none">
 				<Tweet id="https://twitter.com/18plus_plus/status/1607909962340241408" />
 			{data
 				? data.map((dcardData, index) => (
 					<DetailCard key={index} dcardData={dcardData} />
 				  ))
 				: <Skeleton show={data ? false : true} />}
-			</div>
 		</div>
 		<Footer></Footer>
 	  </main>	  
