@@ -1,15 +1,18 @@
 ---
 const { fDownload } = Astro.props;
 ---
-<figure class="relative z-20 mx-auto pt-10 max-w-3xl xl:max-w-none" contenteditable="false">
+<figure class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none" contenteditable="false">
   <div class="relative block">
     <div class="block">
+      {fDownload.downloads.map(download =>
       <div class="mx-10 my-4 grid justify-items-center gap-3 rounded bg-[rgb(243,245,248)] p-6">
-        <div class="block select-none font-[bold]">{fDownload.name}</div>
-        <a download={fDownload.name} href={fDownload.link} target="_blank" rel="noopener referrer" class="mt-1 cursor-pointer bg-transparent text-[-webkit-link] no-underline"
+        <div class="block select-none font-[bold]">{download.name}</div>
+        <a download={download.name} href={download.link} target="_blank" rel="noopener referrer" class="mt-1 cursor-pointer bg-transparent text-[-webkit-link] no-underline"
           ><button class="m-0 box-border h-8 min-w-[120px] cursor-pointer select-none resize-none appearance-none overflow-visible rounded-[80000px] bg-[#0096fa] px-[calc(16px)] py-0 font-[bold] text-sm normal-case leading-none text-white transition-[border-color] delay-[0s,background,color] duration-[0.16s] ease-[ease-out]"><div class="sc-1s35wwu-2 ieoUtK">下载</div></button></a
         >
       </div>
+      )}
     </div>
   </div>
 </figure>
+
