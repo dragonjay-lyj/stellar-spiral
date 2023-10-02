@@ -1,0 +1,22 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../style/all.css';
+import Navigation from '../../../components/Navigation.astro';
+import ShowCard from '../../../components/ShowCard.astro';
+import data from '../../../json/pic/Kora/Kora1.json';
+import Waline from '../../../components/Waline.astro';
+import FanboxDownload from '../../../components/FanboxDownload.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout title="游戏打蛋机">
+	<main>
+		  <Navigation></Navigation>
+		<div id="response" class="relative z-20 mx-auto grid gap-3 pt-10 sm:grid-cols-3 max-w-3xl sm:grid-rows-2 xl:max-w-none">
+			<ShowCard scardData={data.scardData} />
+		</div>
+		<FanboxDownload fDownload={data.fDownload} />
+	  <Waline></Waline>
+      <Footer></Footer>
+	  </main>	  
+</Layout>

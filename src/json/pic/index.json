@@ -19,5 +19,12 @@
     "tag": "Pixiv Fanbox",
     "background": "https://cdn.jsdelivr.net/gh/dragonjay-lyj/wiki-pic@main/00072.webp",
     "link": "/pic/18plusplus/"
+  },
+  {
+    "avatar": "https://i.postimg.cc/0NyzQWxx/image.png",
+    "name": "Kora Skiinmode",
+    "tag": "写真",
+    "background": "https://file.dragonjay.top/api/raw/?path=/album/Kora_Skiinmode_Beginning/001.webp",
+    "link": "/pic/Kora/"
   }
 ]
