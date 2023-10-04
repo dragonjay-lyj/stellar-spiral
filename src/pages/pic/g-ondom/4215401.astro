@@ -2,23 +2,21 @@
 import Layout from '../../../layouts/Layout.astro';
 import '../../../style/all.css';
 import Navigation from '../../../components/Navigation.astro';
-import Skeleton from '../../../components/Skeleton.astro';
-import DetailCard from '../../../components/DetailCard.astro';
-import data from '../../../json/pic/18plusplus/index.json';
+import ShowCard from '../../../components/ShowCard.astro';
+import data from '../../../json/pic/g-ondom/4215401.json';
+import Waline from '../../../components/Waline.astro';
+import FanboxDownload from '../../../components/FanboxDownload.astro';
 import Footer from '../../../components/Footer.astro';
 ---
 
 <Layout title="游戏打蛋机">
 	<main>
 		  <Navigation></Navigation>
-		</div>
 		<div id="response" class="relative z-20 mx-auto grid gap-3 pt-10 sm:grid-cols-3 max-w-3xl sm:grid-rows-2 xl:max-w-none">
-			{data
-				? data.map((dcardData, index) => (
-					<DetailCard key={index} dcardData={dcardData} />
-				  ))
-				: <Skeleton show={data ? false : true} />}
+			<ShowCard scardData={data.scardData} />
 		</div>
-		<Footer></Footer>
+		<FanboxDownload fDownload={data.fDownload} />
+	  <Waline></Waline>
+      <Footer></Footer>
 	  </main>	  
 </Layout>

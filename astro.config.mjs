@@ -9,7 +9,6 @@ import astroI18next from "astro-i18next";
 import robotsTxt from "astro-robots-txt";
 import critters from "astro-critters";
 import compressor from "astro-compressor";
-import embeds from 'astro-embed/integration';
 import vercel from '@astrojs/vercel/serverless';
 import vue from "@astrojs/vue";
 
@@ -22,7 +21,7 @@ export default defineConfig({
     },
   }),
   site: 'https://wiki.dragonjay.top',
-  integrations: [tailwind(), markdoc(), embeds(), mdx(), partytown(), prefetch(), sitemap(), robotsTxt(), astroI18next(), critters(), compressor({
+  integrations: [tailwind(), markdoc(), mdx(), partytown(), prefetch(), sitemap(), robotsTxt(), astroI18next(), critters(), compressor({
     gzip: true,
     brotli: true
   }), vue()]

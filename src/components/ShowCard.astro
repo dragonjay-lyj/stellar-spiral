@@ -112,21 +112,3 @@ Fancybox.bind('[data-fancybox="gallery"]', {
   },
 });
 </script>
-
-<script src="https://unpkg.com/nsfwjs/dist/nsfwjs.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    const img = document.getElementById('card-img');
-    const modelUrl = 'https://cdn.jsdelivr.net/gh/dragonjay-lyj/nsfw@main/model.json'; // Replace with your custom model URL
-    const model = await nsfwjs.load(modelUrl, {size: 299});  // Load the model with the custom URL
-
-    img.onload = async function() {
-      const predictions = await model.classify(img);
-      const isNsfw = predictions.some(p => (p.className === 'Hentai' || p.className === 'Porn') && p.probability > 0.5);
-
-      if (isNsfw) {
-        img.style.filter = 'blur(20px)';
-      }
-    }
-  });
-</script>

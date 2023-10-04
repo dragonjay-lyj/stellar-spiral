@@ -6,7 +6,6 @@ import Skeleton from '../../../components/Skeleton.astro';
 import DetailCard from '../../../components/DetailCard.astro';
 import data from '../../../json/pic/g-ondom/index.json';
 import Footer from '../../../components/Footer.astro';
-import { Tweet } from 'astro-embed';
 ---
 
 <Layout title="游戏打蛋机">
@@ -14,7 +13,6 @@ import { Tweet } from 'astro-embed';
 		  <Navigation></Navigation>
 		</div>
 		<div id="response" class="relative z-20 mx-auto grid gap-3 pt-10 sm:grid-cols-3 max-w-3xl sm:grid-rows-2 xl:max-w-none">
-				<Tweet id="https://twitter.com/cpk28_/status/1688861975840006144" />
 			{data
 				? data.map((dcardData, index) => (
 					<DetailCard key={index} dcardData={dcardData} />
